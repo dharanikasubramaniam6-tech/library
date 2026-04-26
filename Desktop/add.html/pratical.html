@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>book management </title>
+<style>
+ body {
+      text-align: center;
+      font-family: Arial;
+    }
+</style>
+</head>
+<body>
+<h2>library management system</h2>
+book name:<input type="text" id="name"><br>
+author name:<input type="text" id="author"><br>
+book no:<input type="number" id="no"><br>
+<button onclick="add()">add book</button>
+<ul id="list"></ul>
+
+
+<script>
+let books=[];
+
+
+function add(){
+
+let book=document.getElementById("name").value;
+let author=document.getElementById("author").value;
+
+if(book==" " || author==" ")
+{
+alert("empty field");
+return;
+}
+books.push(book + " by " + author);
+ let list = document.getElementById("list");
+  list.innerHTML = "";
+
+  for (let i = 0; i < books.length; i++) {
+    list.innerHTML += "<li>" + books[i] + "</li>";
+  }
+
+}
+</script>
+</body>
+</html>
